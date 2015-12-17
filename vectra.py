@@ -10,7 +10,6 @@ class Vectra:
         self.auth = (username, password)
 
     def settings(self):
-        parameters = {}
         req_url = self.url.format("settings")
         req = requests.get(url=req_url,
                            auth=self.auth,
@@ -19,7 +18,6 @@ class Vectra:
         return req
 
     def rules(self):
-        parameters = {}
         req_url = self.url.format("rules")
         req = requests.get(url=req_url,
                            auth=self.auth,
@@ -199,7 +197,6 @@ class Vectra:
         return req
 
     def sensors(self):
-        parameters = {}
         req_url = self.url.format("sensors")
         req = requests.get(url=req_url,
                            auth=self.auth,
