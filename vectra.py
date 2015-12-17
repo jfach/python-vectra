@@ -21,7 +21,10 @@ class Vectra:
     def rules(self):
         parameters = {}
         req_url = self.url.format("rules")
-        req = requests.get(url=req_url, auth=self.auth, headers=self.headers, verify=False)
+        req = requests.get(url=req_url,
+                           auth=self.auth,
+                           headers=self.headers,
+                           verify=False)
         return req
 
     def detections(self, host=None):
@@ -39,11 +42,17 @@ class Vectra:
     def hosts(self):
         parameters = {}
         req_url = self.url.format("hosts")
-        req = requests.get(url=req_url, auth=self.auth, headers=self.headers, verify=False)
+        req = requests.get(url=req_url,
+                           auth=self.auth,
+                           headers=self.headers,
+                           verify=False)
         return req
 
     def sensors(self):
         parameters = {}
         req_url = self.url.format("sensors")
-        req = requests.get(url=req_url, auth=self.auth, headers=self.headers, verify=False)
+        req = requests.get(url=req_url,
+                           auth=self.auth,
+                           headers=self.headers,
+                           verify=False)
         return req
