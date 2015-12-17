@@ -137,7 +137,7 @@ class Vectra:
     def hosts(self,
               fields=None,
               page=None,
-              page_size,
+              page_size=None,
               ordering=None,
               name=None,
               state=None,
