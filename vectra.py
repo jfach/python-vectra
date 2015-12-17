@@ -187,6 +187,17 @@ class Vectra:
                            verify=False)
         return req
 
+    def health(self, headend_luid=None):
+        if headend_luid:
+            req_url = self.url.format("health/" + headend_luid)
+        else:
+            req_url = self.url.format("health")
+        req = requests.get(url=req_url,
+                          auth=self.auth,
+                          headers=self.headers,
+                          verify=False)
+        return req
+
     def sensors(self):
         parameters = {}
         req_url = self.url.format("sensors")
