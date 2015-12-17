@@ -15,7 +15,7 @@ class Vectra:
                            auth=self.auth,
                            headers=self.headers, 
                            verify=False)
-        return req
+        return req.content
 
     def rules(self):
         req_url = self.url.format("rules")
@@ -23,7 +23,7 @@ class Vectra:
                            auth=self.auth,
                            headers=self.headers,
                            verify=False)
-        return req
+        return req.content
 
     def detections(self,
                    fields=None,
@@ -130,7 +130,7 @@ class Vectra:
                            headers=self.headers,
                            params=parameters, 
                            verify=False)
-        return req
+        return req.content
 
     def hosts(self,
               fields=None,
@@ -183,7 +183,7 @@ class Vectra:
                            headers=self.headers,
                            params=parameters,
                            verify=False)
-        return req
+        return req.content
 
     def health(self, headend_luid=None):
         if headend_luid:
@@ -194,7 +194,7 @@ class Vectra:
                           auth=self.auth,
                           headers=self.headers,
                           verify=False)
-        return req
+        return req.content
 
     def sensors(self):
         req_url = self.url.format("sensors")
@@ -202,4 +202,4 @@ class Vectra:
                            auth=self.auth,
                            headers=self.headers,
                            verify=False)
-        return req
+        return req.content
