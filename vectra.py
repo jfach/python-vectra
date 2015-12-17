@@ -134,11 +134,52 @@ class Vectra:
                            verify=False)
         return req
 
-    def hosts(self, state=None):
+    def hosts(self,
+              fields=None,
+              page=None,
+              page_size,
+              ordering=None,
+              name=None,
+              state=None,
+              last_source=None,
+              t_score=None,
+              t_score_gte=None,
+              c_score=None,
+              c_score_gte=None,
+              last_timestamp=None,
+              tags=None,
+              key_asset=None):
         parameters = {}
         req_url = self.url.format("hosts")
+        if fields:
+            parameters['fields'] = fields
+        if page:
+            parameters['page'] = page
+        if page_size:
+            parameters['page_size'] = page_size
+        if ordering:
+            parameters['ordering'] = ordering
+        if name:
+            parameters['name'] = name
         if state:
             parameters['state'] = state
+        if last_source:
+            parameters['last_source'] = last_source
+        if t_score:
+            parameters['t_score'] = t_score
+        if t_score_gte:
+            parameters['t_score_gte'] = t_score_gte
+        if c_score:
+            parameters['c_score'] = c_score
+        if c_score_gte:
+            parameters['c_score_gte'] = c_score_gte
+        if last_timestamp:
+            parameters['last_timestamp'] = last_timestamp
+        if tags:
+            parameters['tags'] = tags
+        if key_asset:
+            parameters['key_asset'] = key_asset
+  
         req = requests.get(url=req_url,
                            auth=self.auth,
                            headers=self.headers,
