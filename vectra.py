@@ -204,3 +204,15 @@ class Vectra:
                            headers=self.headers,
                            verify=False)
         return json.loads(req.content)
+
+   def traffic(self, headend_luid=None):
+	if headend_luid:
+	    req_url = self.url.format("health/" + headend_luid + "/traffic")
+	else:
+	    req_url = self.url.format("health/traffic")
+	req = requests.get(url=req_url,
+                           auth=self.auth,
+                           headers=self.headers,
+                           verify=False)
+	return json.loads(req.content)
+
